@@ -5,16 +5,9 @@ import 'package:charts_flutter/flutter.dart' as charts;
 
 class GroupedBarChart extends StatelessWidget {
   final List<charts.Series<dynamic, String>> seriesList;
-  final bool animate;
 
-  GroupedBarChart(this.seriesList, {this.animate = false});
+  GroupedBarChart({required this.seriesList});
 
-  factory GroupedBarChart.withSampleData() {
-    return GroupedBarChart(
-      _createSampleData(),
-      animate: false,
-    );
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +30,8 @@ class GroupedBarChart extends StatelessWidget {
                   domainAxis: charts.OrdinalAxisSpec(
                       viewport: charts.OrdinalViewport('2018', 4)),
                   behaviors: [
-                    charts.PanBehavior(),
+                    charts.SlidingViewport(),
+                    charts.PanAndZoomBehavior(),
                   ],
                 ),
               ),

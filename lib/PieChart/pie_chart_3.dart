@@ -31,7 +31,7 @@ class PieChart3 extends StatelessWidget {
                   animate: true,
                   animationDuration: Duration(seconds: 1),
                   defaultRenderer: charts.ArcRendererConfig(
-                    arcWidth: 100, //Uncomment for a donut pie chart
+                    arcWidth: 100,
                     arcRendererDecorators: [
                       charts.ArcLabelDecorator(
                           outsideLabelStyleSpec:
